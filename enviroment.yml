@@ -1,0 +1,20 @@
+name: discord-bot-env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9  # Adjust this version if needed
+  - pip
+  - jupyter
+  - load-dotenv
+  - fask
+  - nb_conda  # Enables Conda environment management in Jupyter
+  - jupyter_contrib_nbextensions  # Adds community-contributed Jupyter extensions
+  - ipywidgets  # Adds support for interactive widgets in Jupyter notebooks
+  - pip:
+      - discord.py==2.3.1  # Adjust this to match the version of discord.py you need
+
+# Optional section to automatically enable nbextensions
+post-build:
+  - jupyter contrib nbextension install --user
+  - jupyter nbextension enable --py widgetsnbextension --sys-prefix
