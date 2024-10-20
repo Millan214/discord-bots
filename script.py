@@ -1,6 +1,5 @@
 import discord
 import os
-import asyncio
 import webserver
 from dotenv import load_dotenv
 
@@ -31,15 +30,6 @@ async def on_voice_state_update(member, before, after):
         if channel and voice_channel_num_members <= 1:
             await channel.send(f"<@&{JAMON_ROLE_ID}> > **{member.name}** está solo y necesita validación !")
 
-# Run the bot with asyncio to prevent "Event loop is closed" error
-def run_bot():
-    loop = asyncio.new_event_loop()
-    asyncio.set_event_loop(loop)
-    try:
-        client.run(TOKEN)
-    except Exception as e:
-        print(f"Error running bot: {e}")
-
 if __name__ == "__main__":
-    #webserver.keep_alive()
-    run_bot()
+    webserver.keep_alive()
+    client.run(TOKEN)
