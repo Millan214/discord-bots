@@ -1,6 +1,6 @@
 import discord
 import os
-import webserver
+import project.webserver as webserver
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -18,7 +18,7 @@ JAMON_ROLE_ID = int(os.getenv('JAMON_ROLE_ID'))
 
 @client.event
 async def on_ready():
-    print(f'Logged in as {client.user}')
+    print(f'Client: Logged in as {client.user}')
 
 @client.event
 async def on_voice_state_update(member, before, after):
@@ -30,6 +30,6 @@ async def on_voice_state_update(member, before, after):
         if channel and voice_channel_num_members <= 1:
             await channel.send(f"<@&{JAMON_ROLE_ID}> > **{member.name}** está solo y necesita validación !")
 
-if __name__ == "__main__":
+async def run_client():
     webserver.keep_alive()
-    client.run(TOKEN)
+    await client.start(TOKEN)
