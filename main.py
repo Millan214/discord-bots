@@ -7,5 +7,8 @@ os.chdir("./project")
 
 async def main():
     await asyncio.gather(run_bot(), run_client())
- 
-asyncio.run(main())
+
+try:
+    asyncio.run(main())
+except Exception as err:
+    print(f"ERROR: {err}")
