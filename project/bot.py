@@ -29,5 +29,6 @@ async def load_commands():
                 print(f'Failed to load extension {filename}: {e}')
 
 async def run_bot():
+    print("ola")
     await load_commands()
     await bot.start(TOKEN)
