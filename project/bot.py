@@ -20,7 +20,12 @@ async def on_ready():
 async def load_commands():
     print("\nLoading bot commands ...\n")
     # Load Cogs (extensions) dynamically
-    for filename in os.listdir('./commands'):
+    try:
+        dir_list = os.listdir('./commands')
+    except:
+        dir_list = os.listdir('./project/commands')
+
+    for filename in dir_list:
         if filename.endswith('.py'):
             try:
                 await bot.load_extension(f'commands.{filename[:-3]}')

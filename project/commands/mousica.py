@@ -44,9 +44,8 @@ class SoundButton(Button):
             vc.stop()
 
         current_path = Path(os.getcwd())
-        parent_path = current_path.parent.resolve()
-        audio_path = os.path.join( parent_path, "audio", self.sound )
-        exec_path = os.path.join(parent_path, "ffmpeg.exe")
+        audio_path = os.path.join( current_path, "audio", self.sound )
+        exec_path = os.path.join(current_path, "ffmpeg.exe")
         audio_source = discord.FFmpegPCMAudio(audio_path, executable=exec_path)
         vc.play(audio_source, after=lambda e: print(f"Finished playing: {self.sound}"))
 

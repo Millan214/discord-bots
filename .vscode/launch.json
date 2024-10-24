@@ -15,7 +15,7 @@
       "name": "main workflow",
       "type": "debugpy",
       "request": "launch",
-      "program": "main.py",
+      "program": "project/main.py",
       "console": "integratedTerminal"
     }
   ]

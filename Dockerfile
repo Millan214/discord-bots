@@ -4,6 +4,12 @@ FROM python:3.9
 # Set working directory in the container
 WORKDIR /app
 
+# Install FFmpeg and other necessary packages
+RUN apt-get update && \
+    apt-get install -y ffmpeg && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 
