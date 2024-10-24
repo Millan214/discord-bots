@@ -1,4 +1,4 @@
-name: discord-bot-env
+name: discord-bot-env-v2
 channels:
   - conda-forge
   - defaults
@@ -6,8 +6,8 @@ dependencies:
   - python=3.9  # Adjust this version if needed
   - pip
   - jupyter
-  - load-dotenv
-  - fask
+  - python-dotenv
+  - flask
   - nb_conda  # Enables Conda environment management in Jupyter
   - jupyter_contrib_nbextensions  # Adds community-contributed Jupyter extensions
   - ipywidgets  # Adds support for interactive widgets in Jupyter notebooks
