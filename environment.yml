@@ -3,18 +3,17 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - python=3.9  # Adjust this version if needed
+  - python=3.9
   - pip
   - jupyter
   - python-dotenv
   - flask
-  - nb_conda  # Enables Conda environment management in Jupyter
-  - jupyter_contrib_nbextensions  # Adds community-contributed Jupyter extensions
-  - ipywidgets  # Adds support for interactive widgets in Jupyter notebooks
+  - nb_conda
+  - jupyter_contrib_nbextensions
+  - ipywidgets
   - pip:
-      - discord.py==2.3.1  # Adjust this to match the version of discord.py you need
+      - discord.py==2.3.1
 
-# Optional section to automatically enable nbextensions
 post-build:
   - jupyter contrib nbextension install --user
   - jupyter nbextension enable --py widgetsnbextension --sys-prefix
