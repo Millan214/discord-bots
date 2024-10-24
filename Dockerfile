@@ -11,9 +11,10 @@ RUN pip install -r requirements.txt
 COPY . .
 
 # Optionally expose a port (if your project is a web app or needs to serve something)
-# EXPOSE 8000
+# EXPOSE 8080
 
 # Command to run your application (adjust according to your entry point script)
+WORKDIR /app/project
 CMD ["python", "main.py"]
 # ENTRYPOINT ["tail"]
 # CMD ["-f","/dev/null"]
