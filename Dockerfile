@@ -11,7 +11,10 @@ COPY environment.yml .
 RUN conda env create -f environment.yml
 
 # Activate the environment
-SHELL ["conda", "run", "-n", "discord-bot-env", "/bin/bash", "-c"]
+RUN activate discord-bot-env-v2
+
+COPY requirements.txt .
+RUN pip install -r requirements.txt
 
 # Copy the current project code into the working directory
 COPY . .
@@ -21,3 +24,5 @@ COPY . .
 
 # Command to run your application (adjust according to your entry point script)
 CMD ["python", "main.py"]
+# ENTRYPOINT ["tail"]
+# CMD ["-f","/dev/null"]

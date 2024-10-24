@@ -1,0 +1,21 @@
+name: CD Pipeline
+
+on:
+  workflow_run:
+    workflows: ["CI Pipeline"]
+    types:
+      - completed
+
+jobs:
+
+  build:
+
+    runs-on: self-hosted
+
+    steps:
+    - name: Pull Docker Image
+      run: sudo docker pull astromillan/cicd-pipeline-pybots:latest
+    - name: Delete old docker container
+      run: docker rm -f cicd-pipeline-pybots || true
+    - name: Run Docker container
+      run: docker run -d -p 8080:8080 --name cicd-pipeline-pybots astromillan/cicd-pipeline-pybots
