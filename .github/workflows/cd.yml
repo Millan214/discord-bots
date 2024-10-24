@@ -16,6 +16,6 @@ jobs:
     - name: Pull Docker Image
       run: sudo docker pull astromillan/cicd-pipeline-pybots:latest
     - name: Delete old docker container
-      run: docker rm -f cicd-pipeline-pybots || true
+      run: sudo docker rm -f cicd-pipeline-pybots || true
     - name: Run Docker container
-      run: docker run -d -p 8080:8080 --name cicd-pipeline-pybots astromillan/cicd-pipeline-pybots
+      run: sudo docker run -d -p 8080:8080 --name cicd-pipeline-pybots astromillan/cicd-pipeline-pybots
