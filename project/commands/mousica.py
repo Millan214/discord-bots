@@ -11,7 +11,11 @@ sounds = {
     "Pelea de palos": "pelea-de-palos.mp3",
     "Sicko Mode": "sicko-mode.mp3",
     "🔥": "el-fuego-nos-dicta-la-verdad.mp3",
-    "FUEGO": "FUEGO.mp3"
+    "FUEGO": "FUEGO.mp3",
+    "exploto": "exploto.mp3",
+    "pal lobby": "pal-lobby.mp3",
+    "pal lobby yo tambien": "pal-lobby-yo-tambien.mp3",
+    "re manco el maxi": "re-manco-el-maxi.mp3"
 }
 
 # Create a Button interaction for each sound
@@ -43,10 +47,9 @@ class SoundButton(Button):
         if vc.is_playing():
             vc.stop()
 
-        current_path = Path(os.getcwd())
+        current_path = Path("/app")
         audio_path = os.path.join( current_path, "audio", self.sound )
-        exec_path = os.path.join(current_path, "ffmpeg.exe")
-        audio_source = discord.FFmpegPCMAudio(audio_path, executable=exec_path)
+        audio_source = discord.FFmpegPCMAudio(audio_path)
         vc.play(audio_source, after=lambda e: print(f"Finished playing: {self.sound}"))
 
         await interaction.response.send_message(f"Playing {self.sound}", ephemeral=True)
