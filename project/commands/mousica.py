@@ -16,7 +16,7 @@ sounds = {
     "pal lobby": "pal-lobby.mp3",
     "pal lobby yo tambien": "pal-lobby-yo-tambien.mp3",
     "re manco el maxi": "re-manco-el-maxi.mp3",
-    "im under the water": "im-under-the-water.mp3"
+    "💧 im under the water": "im-under-the-water.mp3"
 }
 
 # Create a Button interaction for each sound
