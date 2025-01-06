@@ -8,14 +8,10 @@ VOICE_CHANNEL_ID = int(os.getenv('VOICE_CHANNEL_ID'))
 
 # Define sounds to play (in real implementation, these could map to sound files or actual playback)
 sounds = {
-    "Pelea de palos": "pelea-de-palos.mp3",
     "Sicko Mode": "sicko-mode.mp3",
     "🔥": "el-fuego-nos-dicta-la-verdad.mp3",
     "FUEGO": "FUEGO.mp3",
     "exploto": "exploto.mp3",
-    "pal lobby": "pal-lobby.mp3",
-    "pal lobby yo tambien": "pal-lobby-yo-tambien.mp3",
-    "re manco el maxi": "re-manco-el-maxi.mp3",
     "💧 im under the water": "im-under-the-water.mp3"
 }
 
