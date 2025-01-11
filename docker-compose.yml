@@ -1,7 +1,7 @@
 version: '3'
 services:
   cicd-pipeline-pybots:
-    image: jose #image: astromillan/cicd-pipeline-pybots  # Use the image specified
+    image: astromillan/cicd-pipeline-pybots  # Use the image specified
     container_name: cicd-pipeline-pybots     # Name the container
     ports:
       - "8080:8080"                          # Map port 8080 on the host to port 8080 in the container
