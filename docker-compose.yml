@@ -1,4 +1,3 @@
-version: '3'
 services:
   cicd-pipeline-pybots:
     image: astromillan/cicd-pipeline-pybots  # Use the image specified
