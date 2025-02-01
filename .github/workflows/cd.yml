@@ -16,6 +16,6 @@ jobs:
     - name: Pull Docker Image
       run: sudo docker pull astromillan/cicd-pipeline-pybots:latest
     - name: Delete old docker container
-      run: sudo docker rm -f astromillan/cicd-pipeline-pybots || true
+      run: sudo docker rmi $(docker images -q --filter "dangling=true") || true
     - name: Run Docker container
       run: sudo docker compose up -d
